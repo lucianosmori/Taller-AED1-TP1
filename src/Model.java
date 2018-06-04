@@ -20,6 +20,14 @@ public class Model {
             opcionOperar = sc.nextInt();
             sc.nextLine();
             
+               try{
+            	ele.excepcionEleccion(opcionIngresada);
+                
+            }catch (EleccionException e){
+            	//e.printStackTrace();
+            	System.out.println("Tiene un problema: "+e.getMessage());
+            }
+            
             switch (opcionOperar) {
                 case 1:
                     do{

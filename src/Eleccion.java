@@ -1,12 +1,16 @@
 public class Eleccion {
-    
-    public Eleccion(){
-        
+	
+	int opcionIngresada;
+	
+	public Eleccion(){
+		
+	}
+	
+	public Eleccion(int opcionIngresada) throws EleccionException{
+		if(opcionIngresada <= 1 && opcionIngresada >= 2){
+			throw new EleccionException("Error");
+		}	else{
+			this.opcionIngresada = opcionIngresada;
+		}
+	}
     }
-    
-    public void excepcionEleccion(int opcionIngresada) throws EleccionException{
-        if(opcionIngresada != (1&2)){
-            throw new EleccionException("Error al Ingresar el numero");
-        }
-    }
-}

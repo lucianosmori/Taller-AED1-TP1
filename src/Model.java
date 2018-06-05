@@ -17,18 +17,18 @@ public class Model {
         do{
             System.out.println("1.Operar");
             System.out.println("0.Salir");
-            opcionOperar = sc.nextInt();
+            opcionIngresada = sc.nextInt();
             sc.nextLine();
             
-            try{
-            	ele.excepcionEleccion(opcionIngresada);
-                
+           try{
+            	ele = new Eleccion(opcionIngresada);         
             }catch (EleccionException e){
-            	//e.printStackTrace();
-            	System.out.println("Tiene un problema: "+e.getMessage());
+            	e.printStackTrace();
+            }finally {
+            	System.out.println("Opcion "+opcionIngresada+" elegida");
             }
             
-            switch (opcionOperar) {
+            switch (opcionIngresada) {
                 case 1:
                     do{
                         System.out.println("\nHa seleccionado Operar");
